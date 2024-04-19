@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title Delivery Status></title>
+</head>
+<style>
+    table, th, td {
+      border:1px solid black;
+      padding: 2px;
+      
+    }
+    h1{
+        color: red;
+    }
+    #divElement{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    } 
+    </style>
+<body>
+<div id="divElement">
+<center>
+    <h1 >Delivery Status</h1>
+</center>
+
+<table>
+    <tr>
+        <th>Destination </th>
+        <th>Destination Adress</th>
+        <th>Sender</th>
+        <th>Sender Address</th>
+        <th>Recipient</th>
+        <th>Recipient Address</th>
+        <th>Detdvery Date</th>
+        <th>Status</th>
+        <th>Current Location</th>
+    </tr>
+    <tr>
+            <ul th:each="data : ${data}">
+                <td th:text="${data.destination} "/></td>
+                <td th:text="${data.destinationAddress} "/></td>
+                <td th:text="${data.sender}"/></td>
+                <td th:text="${data.senderAddress}"/></td>
+                <td th:text="${data.recipient}"/></td>
+                <td th:text="${data.recipientAddress}"/></td>
+                <td th:text="${data.deliveryDate}"/></td>
+                <td th:text="${data.status}"/></td>
+                <td th:text="${data.currentLocation}"/></td>
+            <ul/>
+    </tr>
+</table>
+</div>
+</body>
+</html>
